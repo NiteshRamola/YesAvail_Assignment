@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../Redux/actions/orderActions'
+import { ORDER_CREATE_RESET } from '../Redux/constants/orderConstants'
 
 function PlaceOrderScreen({ history }) {
   const orderCreate = useSelector((state) => state.orderCreate)
@@ -26,8 +27,9 @@ function PlaceOrderScreen({ history }) {
   ).toFixed(2)
 
   useEffect(() => {
-    if (success){
-      history.push(`/`)
+    if (success) {
+      history.push(`/order/${order._id}`)
+      dispatch({ type: ORDER_CREATE_RESET })
     }
   }, [success, history, dispatch])
 
@@ -121,7 +123,7 @@ function PlaceOrderScreen({ history }) {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Tax: (GST 18%)</Col>
+                  <Col>Tax:</Col>
                   <Col>₹{cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>

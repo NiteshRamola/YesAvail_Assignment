@@ -1,5 +1,6 @@
 import {ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS} from "../constants/orderConstants";
 import axios from "axios";
+import {CART_CLEAR_ITEMS} from "../constants/cartConstants";
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -25,8 +26,13 @@ export const createOrder = (order) => async (dispatch, getState) => {
       payload: data,
     })
 
+    dispatch({
+      type: CART_CLEAR_ITEMS,
+      payload: data,
+    })
+
+    localStorage.removeItem('cartItems')
   } catch (error) {
-    console.log(error.response)
     dispatch({
       type: ORDER_CREATE_FAIL,
       payload:
