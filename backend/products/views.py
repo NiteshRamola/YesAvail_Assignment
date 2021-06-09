@@ -9,7 +9,11 @@ from .serializers import ProductSerializer
 # Get list of all the products
 @api_view(['GET'])
 def getProducts(request):
-    products = Product.objects.all()
+    query = request.query_params.get('keyword')
+    if query == None:
+        query = ''
+
+    products = Product.objects.filter(name__icontains=query)
 
     page = request.query_params.get('page')
     paginator = Paginator(products, 4)
