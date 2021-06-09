@@ -6,6 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .serializers import ProductSerializer
 
 
+# Get list of all the products
 @api_view(['GET'])
 def getProducts(request):
     products = Product.objects.all()
@@ -27,3 +28,11 @@ def getProducts(request):
 
     serializer = ProductSerializer(products, many=True)
     return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
+
+
+# Get single product and its detail
+@api_view(['GET'])
+def getProduct(request, pk):
+    product = Product.objects.get(_id=pk)
+    serializer = ProductSerializer(product, many=False)
+    return Response(serializer.data)
