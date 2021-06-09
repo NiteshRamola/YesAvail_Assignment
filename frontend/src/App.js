@@ -11,6 +11,7 @@ import ShippingScreen from "./screens/ShippingScreen";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
        <Route path={'/register'} component = {SignUpScreen}/>
        <Route path={'/shipping'} component = {ShippingScreen}/>
        <Route path={'/payment'} component={PaymentScreen}/>
+       <Route path={'/placeorder'} component={PlaceOrderScreen}/>
      </Container>
      <Footer/>
    </Router>
