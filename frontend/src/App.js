@@ -7,8 +7,10 @@ import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignUpScreen from "./screens/SignUpScreen";
+import ShippingScreen from "./screens/ShippingScreen";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PaymentScreen from "./screens/PaymentScreen";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
        <Route path={'/cart/:id?'} component={CartScreen} />
        <Route path={'/login'} component = {LoginScreen} />
        <Route path={'/register'} component = {SignUpScreen}/>
+       <Route path={'/shipping'} component = {ShippingScreen}/>
+       <Route path={'/payment'} component={PaymentScreen}/>
      </Container>
      <Footer/>
    </Router>
