@@ -14,7 +14,7 @@
 * 1 - Clone project: git clone https://github.com/NiteshRamola/YesAvail_Assignment/
 * 2 - cd YesAvail_Assignment/backend
 * 3 - Create virtual environment: virtualenv myenv
-* 4 - source myenv\bin\activate
+* 4 - source myenv\bin\activate (Linux & Mac) |  myenv\scripts\activate (Windows)
 * 5 - pip install -r requirements.txt
 * 6 - python manage.py runserver
 
