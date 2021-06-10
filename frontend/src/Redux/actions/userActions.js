@@ -4,8 +4,11 @@ import {
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
   USER_LOGOUT,
-  USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL
+  USER_REGISTER_REQUEST,
+  USER_REGISTER_SUCCESS,
+  USER_REGISTER_FAIL
 } from "../constants/userConstant";
+import {ORDER_LIST_MY_RESET} from "../constants/orderConstants";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -45,6 +48,7 @@ export const login = (email, password) => async (dispatch) => {
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo')
   dispatch({ type: USER_LOGOUT })
+  dispatch({ type: ORDER_LIST_MY_RESET })
 }
 
 export const register = (name, email, password) => async (dispatch) => {
@@ -86,3 +90,4 @@ export const register = (name, email, password) => async (dispatch) => {
     })
   }
 }
+
