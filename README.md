@@ -18,7 +18,8 @@
 * 5 - pip install -r requirements.txt
 * 6 - python manage.py makemigrations
 * 7 - python manage.py migrate
-* 8 - python manage.py runserver
+* 8 - Add products via Django Admin
+* 9 - python manage.py runserver
 
 # Install react modules
 * 1 - cd frontend
