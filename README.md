@@ -16,7 +16,9 @@
 * 3 - Create virtual environment: virtualenv myenv
 * 4 - source myenv\bin\activate (Linux & Mac) |  myenv\scripts\activate (Windows)
 * 5 - pip install -r requirements.txt
-* 6 - python manage.py runserver
+* 6 - python manage.py makemigrations
+* 7 - python manage.py migrate
+* 8 - python manage.py runserver
 
 # Install react modules
 * 1 - cd frontend
