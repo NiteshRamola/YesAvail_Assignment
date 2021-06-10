@@ -1,5 +1,7 @@
 # YesAvail_Assignment
 
+[Watch the video](./DemoVideo.mp4)
+
 # Features
 * User Login & SignUp
 * Full featured shopping cart
