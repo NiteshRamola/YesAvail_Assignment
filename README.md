@@ -1,9 +1,7 @@
 
-Uploading DemoVideo.mp4…
-
 # YesAvail_Assignment
 
-![DEMO](./DemoVideo.mp4)
+![DEMO](./Homepage.png)
 
 # Features
 * User Login & SignUp
