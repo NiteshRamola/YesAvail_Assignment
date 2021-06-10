@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import { Row, Col, ListGroup, Image, Button, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import { useDispatch, useSelector } from 'react-redux'
@@ -23,6 +24,10 @@ function ProductScreen({ match, history }) {
   }
   return (
     <div>
+      <Helmet>
+        <title>{product.name}</title>
+        <meta name='description' content='Product page' />
+      </Helmet>
       <Link to='/' className='btn btn-light my-3'>
         Go Back
       </Link>

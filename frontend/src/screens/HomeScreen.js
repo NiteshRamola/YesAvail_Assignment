@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { useDispatch, useSelector } from 'react-redux'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
@@ -20,7 +21,10 @@ function HomeScreen({ history }) {
 
   return (
     <div>
-
+      <Helmet>
+        <title>YesAvail</title>
+        <meta name='description' content='Home page' />
+      </Helmet>
       <h1>Latest Products</h1>
       {loading ? (
         <Loader />

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Row, ListGroup, Image, Card, Col } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Message from '../components/Message'
@@ -37,6 +38,10 @@ function OrderScreen({ history, match }) {
     <Message variant='danger'>{error}</Message>
   ) : (
     <div>
+      <Helmet>
+        <title>Order</title>
+        <meta name='description' content='Order page' />
+      </Helmet>
       <h1>Order: {order._id}</h1>
       <Row>
         <Col md={8}>

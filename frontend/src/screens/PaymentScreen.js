@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Button, Col } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { useSelector, useDispatch } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
@@ -24,6 +25,10 @@ function PaymentScreen({ history }) {
 
   return (
     <FormContainer>
+      <Helmet>
+        <title>Payment</title>
+        <meta name='description' content='Payment page' />
+      </Helmet>
       <CheckoutSteps step1 step2 step3 />
 
       <Form onSubmit={submitHandler}>

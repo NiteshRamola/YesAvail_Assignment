@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Row, Col, Button, Table } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { LinkContainer } from 'react-router-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import Loader from '../components/Loader'
@@ -9,6 +10,7 @@ import { listMyOrders } from '../Redux/actions/orderActions'
 function ProfileScreen({ history }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [title, setTitle] = useState('Profile')
 
   const dispatch = useDispatch()
 
@@ -25,10 +27,15 @@ function ProfileScreen({ history }) {
         dispatch(listMyOrders())
       setName(userInfo.name)
       setEmail(userInfo.email)
+      setTitle(userInfo.name)
     }
   }, [dispatch, history, userInfo])
   return (
     <Row>
+      <Helmet>
+        <title>{name}</title>
+        <meta name='description' content='Profile page' />
+      </Helmet>
       <Col md={3}>
         <h2>User Profile</h2>
         <Form>

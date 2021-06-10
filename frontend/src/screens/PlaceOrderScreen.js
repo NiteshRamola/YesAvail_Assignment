@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Button, Row, ListGroup, Image, Card, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import { useSelector, useDispatch } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
@@ -49,6 +50,10 @@ function PlaceOrderScreen({ history }) {
 
   return (
     <div>
+      <Helmet>
+        <title>PlaceOrder</title>
+        <meta name='description' content='PlaceOrder page' />
+      </Helmet>
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

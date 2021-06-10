@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { saveShippingAddress } from '../Redux/actions/cartActions'
+import {Helmet} from "react-helmet";
 
 function ShippingScreen({ history }) {
   const cart = useSelector((state) => state.cart)
@@ -25,6 +26,10 @@ function ShippingScreen({ history }) {
 
   return (
     <FormContainer>
+      <Helmet>
+        <title>Shipping Address</title>
+        <meta name='description' content='Shipping page' />
+      </Helmet>
       <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>

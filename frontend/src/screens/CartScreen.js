@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
@@ -29,6 +30,10 @@ function CartScreen({ match, location, history }) {
 
   return (
     <Row>
+      <Helmet>
+        <title>Cart</title>
+        <meta name='description' content='Cart page' />
+      </Helmet>
       <Col md={8}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (

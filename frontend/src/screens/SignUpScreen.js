@@ -6,6 +6,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import FormContainer from '../components/FormContainer'
 import { register } from '../Redux/actions/userActions'
+import {Helmet} from "react-helmet";
 
 function SignUpScreen({ location, history }) {
   const [name, setName] = useState('')
@@ -37,6 +38,10 @@ function SignUpScreen({ location, history }) {
   }
   return (
     <FormContainer>
+      <Helmet>
+        <title>Sign Up</title>
+        <meta name='description' content='SignUp page' />
+      </Helmet>
       <h1>Sign Up</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
