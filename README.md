@@ -1,6 +1,6 @@
 # YesAvail_Assignment
 
-[Watch the video](./DemoVideo.mp4)
+![DEMO](./DemoVideo.mp4)
 
 # Features
 * User Login & SignUp
